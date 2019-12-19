@@ -6,7 +6,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-a = PostCounter.new
-a.tags = "default"
-a.limit = 3
-a.save
+if PostCounter.where(tags: "default").blank?
+  a = PostCounter.new
+  a.tags = "default"
+  a.limit = 3
+  a.save
+end
