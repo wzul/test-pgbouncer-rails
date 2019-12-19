@@ -1,0 +1,2 @@
+class PostCounter < ApplicationRecord
+end

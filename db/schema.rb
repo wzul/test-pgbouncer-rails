@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_18_084859) do
+ActiveRecord::Schema.define(version: 2019_12_19_031640) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "post_counters", force: :cascade do |t|
+    t.string "tags"
+    t.integer "limit", default: 0, null: false
+    t.integer "counter", default: 0, null: false
+    t.index ["tags"], name: "index_post_counter_on_tags"
+  end
 
   create_table "posts", force: :cascade do |t|
     t.integer "amount", default: 0, null: false

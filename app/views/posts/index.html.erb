@@ -1,0 +1,8 @@
+<h2>This is index post action controller</h2>
+<p>
+  The time is now: <%= Time.now %>
+</p>
+
+<% @posts.each do |post| %>
+  <p><%= post.id %>. <%= post.name %></p>
+<% end %>

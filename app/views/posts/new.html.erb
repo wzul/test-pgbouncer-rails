@@ -1,0 +1,15 @@
+<h2>This is new post action controller</h2>
+<p>
+  The time is now: <%= Time.now %>
+</p>
+<%= form_with(model: @post, local: true) do |f| %>
+  <p>
+    <%= label_tag(:f, "Name:") %>
+    <%= f.text_field :name %>
+  </p>
+  <p>
+    <%= label_tag(:f, "Amount:") %>
+    <%= f.text_field :amount %>
+  </p>
+  <%= f.submit "Create" %>
+<% end %>
