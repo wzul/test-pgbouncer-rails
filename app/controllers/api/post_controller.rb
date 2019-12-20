@@ -3,7 +3,7 @@ class Api::PostController < ApplicationController
 
   def create
     @pc = PostCounter.where(tags: "default").first
-    @pc.with_lock do
+    # @pc.with_lock do
       if @pc.limit > @pc.counter
         # sleep(5)
         Post.create(post_params)
@@ -13,7 +13,7 @@ class Api::PostController < ApplicationController
         render json: {message: "already filled up."}
         false
       end
-    end
+    # end
 
   end
 
