@@ -66,5 +66,6 @@ gem 'faker', :git => 'https://github.com/faker-ruby/faker.git', :branch => 'mast
 
 group :production do
   gem 'newrelic_rpm'
+  gem "sentry-raven"
 end
 gem "rack", ">= 2.0.8"
