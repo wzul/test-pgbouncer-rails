@@ -8,4 +8,8 @@ Rails.application.routes.draw do
   # get 'resetpostcounter', 
 
   get 'resetpostcounter', action: :reset, controller: 'post_counter'
+
+  namespace :api do
+    post 'create', action: :create, controller: :post
+  end
 end
