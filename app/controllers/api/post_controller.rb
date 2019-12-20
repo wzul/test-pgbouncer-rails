@@ -5,7 +5,7 @@ class Api::PostController < ApplicationController
     @pc = PostCounter.where(tags: "default").first
     @pc.with_lock do
       if @pc.limit > @pc.counter
-        sleep(5)
+        # sleep(5)
         Post.create(post_params)
         @pc.increment!(:counter,1)
         render json: {message: "success #{post_params[:name]}"}
