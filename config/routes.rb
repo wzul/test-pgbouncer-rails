@@ -9,6 +9,8 @@ Rails.application.routes.draw do
 
   get 'resetpostcounter', action: :reset, controller: 'post_counter'
 
+  get 'testfixie', action: :test, controller: 'fixie_addon'
+
   namespace :api do
     post 'create', action: :create, controller: :post
   end

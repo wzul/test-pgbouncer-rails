@@ -69,3 +69,4 @@ group :production do
   gem "sentry-raven"
 end
 gem "rack", ">= 2.0.8"
+gem 'httparty'
